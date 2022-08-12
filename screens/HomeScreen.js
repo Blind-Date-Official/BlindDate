@@ -6,7 +6,7 @@ import LayoutWrapper from "../components/LayoutWrapper/LayoutWrapper";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import firebase from "firebase/compat/app";
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "../firebase";
+import { firebaseConfig, app } from "../firebase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   initializeAuth,
@@ -15,10 +15,10 @@ import {
 
 const HomeScreen = ({ navigation }) => {
   console.log(firebaseConfig);
-  const app = firebase.initializeApp(firebaseConfig);
+  const appData = app;
 
   useEffect(() => {
-    const auth = initializeAuth(app, {
+    const auth = initializeAuth(appData, {
       persistence: getReactNativePersistence(AsyncStorage),
     });
     console.log("Auth: ", auth);
@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
         if (user != null) {
           console.log("USER:", user);
           /* navigation.navigate("Dashboard"); */
-          navigation.navigate("StepForm");
+          navigation.navigate("LocationScreen");
         } else {
           navigation.navigate("Outh");
         }

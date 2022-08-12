@@ -66,7 +66,7 @@ const Outh = ({ navigation }) => {
       .then((result) => {
         console.log("Credential Result", result.user.uid);
         setCode("");
-        navigation.navigate("StepForm");
+        navigation.navigate("LocationScreen");
       })
       .catch((error) => {
         navigation.navigate("Outh");
