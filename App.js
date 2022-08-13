@@ -9,6 +9,7 @@ import StepForm from "./screens/StepForm";
 import Outh from "./screens/Outh";
 import Dashboard from "./screens/Dashboard";
 import LocationScreen from "./screens/LocationScreen";
+import NoLocationSet from "./screens/NoLocationSet";
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,12 @@ const App = () => {
           <Stack.Screen
             name="LocationScreen"
             component={LocationScreen}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="NoLocationSet"
+            component={NoLocationSet}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
