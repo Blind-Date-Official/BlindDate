@@ -36,3 +36,5 @@ expo build:android -t apk
 
 - Hot reload error (auth/already-initialized)
 - Finish click line
+- Save geolocation in database
+- Save clickline in database
